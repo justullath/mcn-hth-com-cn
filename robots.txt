@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://justullath.github.io/mcn-hth-com-cn/sitemap.xml
