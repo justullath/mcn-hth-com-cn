@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 持续抵达</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f7f6f3;
+            color: #1f2a3a;
+            line-height: 1.6;
+        }
+
+        /* --- 深色头图 --- */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2a 0%, #122b3f 70%, #1d3e54 100%);
+            color: #eaeef2;
+            padding: 4rem 1.5rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 -6px 12px rgba(0,0,0,0.08);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -10%;
+            width: 120%;
+            height: 70px;
+            background: #f7f6f3;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            font-weight: 300;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+            padding-top: 0.6rem;
+            margin-top: 0.3rem;
+        }
+
+        .hero .seed-hint {
+            display: none;
+        }
+
+        /* --- 浅色正文区 --- */
+        .content {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 1.8rem 1.8rem 3.5rem;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.2rem 2.2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 28px rgba(0, 20, 30, 0.06);
+            transition: box-shadow 0.25s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 10px 34px rgba(0, 40, 60, 0.08);
+        }
+
+        .section-card h2 {
+            font-size: 1.7rem;
+            font-weight: 480;
+            margin-bottom: 1.2rem;
+            color: #0b2a3a;
+            position: relative;
+            padding-left: 1.2rem;
+            border-left: 4px solid #c97b4b;
+        }
+
+        .section-card p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #2c3e4e;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #b45d3a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 450;
+        }
+
+        a:hover {
+            color: #8a442a;
+            border-bottom: 1px solid #b45d3a;
+        }
+
+        .inline-highlight {
+            background: #f3efe8;
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            font-style: normal;
+        }
+
+        /* FAQ 摘要风格 */
+        .faq-mini {
+            background: #faf9f6;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin-top: 2rem;
+            border: 1px solid #e4dfd7;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1f3a47;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-mini h3::before {
+            content: '▸';
+            color: #b45d3a;
+            font-size: 1.4rem;
+        }
+
+        .faq-mini p {
+            margin-left: 1.6rem;
+            color: #3a4f5e;
+            font-size: 1rem;
+        }
+
+        /* 页尾 */
+        .footer-note {
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            padding: 0 1.5rem;
+            font-size: 0.95rem;
+            color: #6f7f8c;
+            border-top: 1px solid #dad5cb;
+            padding-top: 2rem;
+        }
+
+        .footer-note .soft-cta {
+            background: #eae4db;
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            border-radius: 40px;
+            font-size: 1.05rem;
+            color: #1f2a3a;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+        }
+
+        .footer-note .soft-cta:hover {
+            background: #dbd1c2;
+        }
+
+        .footer-note a {
+            border-bottom: none;
+            font-weight: 500;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3rem 1rem 4rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .content {
+                padding: 1rem 1rem 2.5rem;
+            }
+            .section-card {
+                padding: 1.5rem 1.2rem;
+            }
+            .section-card h2 {
+                font-size: 1.4rem;
+                padding-left: 0.8rem;
+            }
+            .faq-mini {
+                padding: 1.2rem 1.2rem;
+            }
+            .faq-mini h3::before {
+                font-size: 1.2rem;
+            }
+            .faq-mini p {
+                margin-left: 0.8rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .section-card p {
+                font-size: 0.98rem;
+            }
+            .footer-note .soft-cta {
+                padding: 0.5rem 1.4rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 hero -->
+    <header class="hero">
+        <h1>雷速 · 再抵达</h1>
+        <div class="sub">每一次折返，都离熟悉更近一步</div>
+        <!-- 种子标记只用于变化，不显示 -->
+        <span class="seed-hint"></span>
+    </header>
+
+    <!-- 浅色正文 -->
+    <main class="content">
+
+        <!-- 第一段：再次访问与收藏 -->
+        <section class="section-card">
+            <h2>收藏，是另一种抵达</h2>
+            <p>
+                你或许已经不止一次来到 <a href="https://leisu-main.com">雷速</a> 了。浏览器书签栏里那个安静的文件夹，或是一句随口说出的“我记得那个站”——熟悉感往往不需要刻意经营。当你再次输入地址，或者从收藏夹中点开，页面加载的那一刻，像是推开一扇已经认得你脚步的门。
+            </p>
+            <p>
+                我们并不追求让人过目不忘的惊艳，而是希望每一次返回都带着某种自然的连续感。就像一本杂志放在茶几上，你随手翻到上次折角的那一页，文章还在，但旁边可能多了一行手写的批注。收藏，不只是保存一个链接，更是预留一个可以随时回来的位置。
+            </p>
+        </section>
+
+        <!-- 第二段：持续关注的自然理由 -->
+        <section class="section-card">
+            <h2>持续关注，不必用力</h2>
+            <p>
+                资讯流转得很快，但并不是所有内容都值得用“追”的方式去对待。对 <a href="https://leisu-main.com">雷速</a> 而言，持续关注的动力往往来自一种朴素的信任：它不会在某个时刻突然变样，也不会为了吸引眼球而改变自己的节奏。你隔几天回来，发现版面依然干净，话题依然围绕着你关心的那些事。
+            </p>
+            <p>
+                有些地方适合高频刷新，有些地方则更适合隔一段时间回来坐一坐。这里属于后者。你可以把它放在浏览器的某个角落，不必设置提醒，不必担心错过——因为当你再次打开时，那些有价值的信息仍然会在那里，以你熟悉的方式排列着。
+            </p>
+        </section>
+
+        <!-- 第三段：温和的积累感 -->
+        <section class="section-card">
+            <h2>页面的记忆，也是你的记忆</h2>
+            <p>
+                网站不只是信息的容器，它也可以承载一段段浏览的痕迹。你上次读到一半的文章，你随手点开的某个分类，甚至你在这个页面上停留的时长——这些细微的数据像图书馆里的借阅记录，安静地证明你曾经来过。<a href="https://leisu-main.com">雷速</a> 不会刻意提醒你这些，但当你再次访问时，那种隐隐的“我好像见过这个”的感觉，就是一种很轻的默契。
+            </p>
+            <p>
+                我们相信，好的数字空间不需要用推送和弹窗来维系关系。它就在那里，保持着稳定的结构，等你下一次自然地想起，然后回来。这种不紧不慢的节奏，本身就是一种持续。
+            </p>
+        </section>
+
+        <!-- FAQ 摘要 融入页面 -->
+        <div class="faq-mini">
+            <h3>你可能会问</h3>
+            <p><strong>“我为什么要再次访问？”</strong> —— 因为有些内容值得不止一次地看，尤其是当你带着新的视角回来时。</p>
+            <p><strong>“收藏之后真的会再看吗？”</strong> —— 收藏是意愿的标记，而再次打开是行动的延续。哪怕只有十分之一的收藏被重新打开，也说明那个链接确实有分量。</p>
+            <p style="margin-bottom: 0;"><strong>“持续关注意味着什么？”</strong> —— 意味着你选择相信一个地方会持续提供它承诺过的东西，而不是突然转向或消失。</p>
+        </div>
+
+    </main>
+
+    <!-- 页尾访问提示 -->
+    <footer class="footer-note">
+        <div>
+            如果你愿意，可以把这里放在收藏夹里。<br>
+            <span class="soft-cta">
+                <a href="https://leisu-main.com" style="border-bottom: none; color: #1f2a3a;">雷速</a> &nbsp;·&nbsp; 随时可以回来
+            </span>
+        </div>
+        <div style="margin-top: 1.2rem; font-size: 0.85rem; opacity: 0.7;">
+            页面内容 · 杂志专题式叙述
+        </div>
+    </footer>
+
+</body>
+</html>
