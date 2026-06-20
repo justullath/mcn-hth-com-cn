@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 857直播 – 站点说明与使用引导</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f2f2;
+      font-family: "Segoe UI", "PingFang SC", Roboto, system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      color: #2e2e2e;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrapper {
+      max-width: 810px;
+      width: 100%;
+    }
+
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 1px 0 #e0e0e0 inset;
+      padding: 2.8rem 2.5rem;
+      margin-bottom: 2.2rem;
+      border: 1px solid #e9e9e9;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #1f1f1f;
+      margin-bottom: 1rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1.2rem;
+    }
+
+    .hero .subhead {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1.6rem;
+      padding-left: 1.6rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+      border: 1px solid #ececec;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04), 0 0 0 1px #d4d4d4 inset;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #1f1f1f;
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e50;
+      margin-top: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      margin-bottom: 1.2rem;
+      color: #3a3a3a;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .inset-quote {
+      background: #f8f9fa;
+      border-left: 4px solid #94a3b8;
+      padding: 1rem 1.5rem;
+      margin: 1.6rem 0 1.2rem 0;
+      border-radius: 8px;
+      color: #4a4a4a;
+      font-style: normal;
+    }
+
+    .inset-quote::before {
+      content: "💡 提示";
+      display: block;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #1f2a44;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .faq-item {
+      margin-top: 1.2rem;
+      border-top: 1px dashed #dadada;
+      padding-top: 1.2rem;
+    }
+
+    .faq-item:first-of-type {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0.8rem;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #1f2a44;
+    }
+
+    .faq-answer {
+      margin-top: 0.2rem;
+      color: #4a4a4a;
+    }
+
+    .visit-statement {
+      text-align: center;
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 2rem 1.8rem;
+      margin-top: 2.2rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .visit-statement p {
+      font-size: 1.05rem;
+    }
+
+    .visit-statement a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #93c5fd;
+      transition: border-color 0.15s;
+    }
+
+    .visit-statement a:hover {
+      border-bottom: 1px solid #1d4ed8;
+      color: #1d4ed8;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #7b7b7b;
+      font-size: 0.85rem;
+      margin-top: 2.8rem;
+      border-top: 1px solid #d8d8d8;
+      padding-top: 1.6rem;
+      letter-spacing: 0.2px;
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+        padding-left: 0.8rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .visit-statement {
+        padding: 1.6rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Hero 区域：标题 + 导语 -->
+    <header class="hero">
+      <h1>关于 857直播 · 站点介绍</h1>
+      <div class="subhead">一份经过整理的说明页，帮助新朋友了解平台的基本定位与可信细节。</div>
+    </header>
+
+    <!-- 卡片式正文 -->
+    <div class="card-grid">
+
+      <!-- 第一段：站点背景与定位 -->
+      <section class="card">
+        <h2>平台定位与内容方向</h2>
+        <p><strong>857直播</strong> 是一个面向泛娱乐与实时互动场景的在线平台。站内主要覆盖直播、短视频及社群交流等模块，内容涵盖才艺展示、日常分享、兴趣圈子等多种类型。从页面结构和服务逻辑来看，平台更偏向于提供轻量、低门槛的观看与互动体验。</p>
+        <p>作为聚合型站点，它同时整合了部分第三方内容接口与用户生成内容，因此整体信息流比较丰富，适合喜欢探索不同直播风格的观众。</p>
+      </section>
+
+      <!-- 第二段：可信说明与注意事项 -->
+      <section class="card">
+        <h2>可信说明与使用提醒</h2>
+        <p>本站内容整理自公开可访问的信息与用户常规反馈，不涉及内部运营数据或未公开政策。用户在使用过程中应留意以下几点：</p>
+        <ul style="margin: 0.6rem 0 1rem 1.6rem; color: #3a3a3a;">
+          <li>平台界面和功能会不定期迭代，具体以实际页面为准。</li>
+          <li>建议通过官方或主流渠道了解最新动态，避免轻信非正式来源的所谓「内部信息」。</li>
+          <li>任何涉及个人隐私或资金往来的操作，请务必核实对方身份与平台规则。</li>
+        </ul>
+        <p>整体来看，<strong>857直播</strong> 在基础功能方面保持了业内常见的交互逻辑，常规的观看和关注流程比较顺畅。</p>
+
+        <!-- 引用提示块 -->
+        <div class="inset-quote">
+          如果你初次接触这个站点，建议先花几分钟浏览首页的分类与热门推荐，快速建立对内容调性的直观印象。
+        </div>
+      </section>
+
+      <!-- 第三段：特点与常见场景 (融合FAQ摘要) -->
+      <section class="card">
+        <h2>特点摘要与常见问题</h2>
+        <p>根据多数用户的体验描述，平台在以下方面受到关注：</p>
+        <ul style="margin: 0.6rem 0 1rem 1.6rem; color: #3a3a3a;">
+          <li><strong>内容覆盖面较广</strong> —— 从才艺直播到闲聊互动都有相应的分区。</li>
+          <li><strong>移动端适配良好</strong> —— 手机浏览器和轻量操作基本无卡顿。</li>
+          <li><strong>主播种类多样</strong> —— 既有新人主播也有较成熟的创作者。</li>
+        </ul>
+
+        <!-- 简洁 FAQ -->
+        <div class="faq-item">
+          <div class="faq-question">❓ 是否需要注册才能观看？</div>
+          <div class="faq-answer">大部分直播内容可以直接观看，部分互动功能（如评论、关注）需要注册账号。具体以页面提示为准。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">❓ 平台是否有官方 APP？</div>
+          <div class="faq-answer">目前主推 Web 端访问，也可以通过手机浏览器直接使用。部分渠道可能提供桌面快捷方式。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">❓ 内容安全与审核方面如何？</div>
+          <div class="faq-answer">平台设有基础的内容审核机制，用户也可通过站内举报功能反馈问题。建议合理使用屏蔽与拉黑功能。</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 访问句：自然嵌入链接 -->
+    <div class="visit-statement">
+      <p>若想亲自了解站点全貌，可直接前往 <a href="https://main-857tv.com">857直播</a> 浏览首页。保持适度、理性地观看，是获得良好体验的前提。</p>
+    </div>
+
+    <!-- 底部说明 -->
+    <div class="footer-note">
+      <p>本页为独立介绍页，内容仅供参考。页面生成时间：2025 · 版本索引 v1.2</p>
+    </div>
+  </div>
+</body>
+</html>
